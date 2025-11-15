@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Mail, PlayCircle, Inbox, Clock, AlertCircle, CheckCircle2, Loader2, Calendar, Filter } from "lucide-react";
+import { PlayCircle, Inbox, Clock, AlertCircle, CheckCircle2, Loader2, Calendar, Filter, Mail } from "lucide-react";
+import { Header } from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -99,20 +100,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-subtle">
-      {/* Header */}
-      <header className="border-b bg-card shadow-sm">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center gap-3">
-            <div className="rounded-xl bg-gradient-primary p-2.5">
-              <Mail className="h-6 w-6 text-white" />
-            </div>
-            <div>
-              <h1 className="text-2xl font-bold tracking-tight">Email Management Dashboard</h1>
-              <p className="text-sm text-muted-foreground">Professional email ingestion & classification system</p>
-            </div>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       <main className="container mx-auto px-6 py-8">
         <div className="grid gap-6 lg:grid-cols-3">
