@@ -1,4 +1,4 @@
-import { Mail, Moon, Sun, User } from "lucide-react";
+import { Mail, Moon, Sun, User, LayoutDashboard, Search, PlayCircle, Inbox } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -60,7 +60,26 @@ export const Header = () => {
                 onClick={() => navigate("/")}
                 className="font-medium"
               >
+                <LayoutDashboard className="h-4 w-4 mr-1.5" />
+                Dashboard
+              </Button>
+              <Button
+                variant={location.pathname === "/pipeline" ? "default" : "ghost"}
+                size="sm"
+                onClick={() => navigate("/pipeline")}
+                className="font-medium"
+              >
+                <PlayCircle className="h-4 w-4 mr-1.5" />
                 Pipeline
+              </Button>
+              <Button
+                variant={location.pathname === "/search" ? "default" : "ghost"}
+                size="sm"
+                onClick={() => navigate("/search")}
+                className="font-medium"
+              >
+                <Search className="h-4 w-4 mr-1.5" />
+                Search
               </Button>
               <Button
                 variant={location.pathname === "/inbox" ? "default" : "ghost"}
@@ -68,6 +87,7 @@ export const Header = () => {
                 onClick={() => navigate("/inbox")}
                 className="font-medium"
               >
+                <Inbox className="h-4 w-4 mr-1.5" />
                 Inbox
               </Button>
             </nav>
@@ -121,21 +141,41 @@ export const Header = () => {
         </div>
 
         {/* Mobile Navigation */}
-        <nav className="md:hidden flex items-center gap-2 mt-4 pt-4 border-t">
+        <nav className="md:hidden grid grid-cols-2 gap-2 mt-4 pt-4 border-t">
           <Button
             variant={location.pathname === "/" ? "default" : "ghost"}
             size="sm"
             onClick={() => navigate("/")}
-            className="flex-1 font-medium"
+            className="font-medium"
           >
+            <LayoutDashboard className="h-4 w-4 mr-1.5" />
+            Dashboard
+          </Button>
+          <Button
+            variant={location.pathname === "/pipeline" ? "default" : "ghost"}
+            size="sm"
+            onClick={() => navigate("/pipeline")}
+            className="font-medium"
+          >
+            <PlayCircle className="h-4 w-4 mr-1.5" />
             Pipeline
+          </Button>
+          <Button
+            variant={location.pathname === "/search" ? "default" : "ghost"}
+            size="sm"
+            onClick={() => navigate("/search")}
+            className="font-medium"
+          >
+            <Search className="h-4 w-4 mr-1.5" />
+            Search
           </Button>
           <Button
             variant={location.pathname === "/inbox" ? "default" : "ghost"}
             size="sm"
             onClick={() => navigate("/inbox")}
-            className="flex-1 font-medium"
+            className="font-medium"
           >
+            <Inbox className="h-4 w-4 mr-1.5" />
             Inbox
           </Button>
         </nav>
